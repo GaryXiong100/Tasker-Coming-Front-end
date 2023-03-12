@@ -32,7 +32,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-
+      #install dependencies    
+      - name: intall dependencies
+        run: |
+          npm install   
       #install Eslint
       - name: install Eslint
         run: |
