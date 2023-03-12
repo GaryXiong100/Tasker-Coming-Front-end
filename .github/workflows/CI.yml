@@ -31,21 +31,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: 'yarn'
+          
       #install dependencies    
       - name: intall dependencies
         run: |
-          npm install   
+          yarn install   
+          
       #install Eslint
       - name: install Eslint
         run: |
-          npm install eslint
+          yarn install eslint
+          
      #run lint check
       - name: Lint Check
         run: |
-          npm run lint
+          yarn run lint
           
       #run unit test              
       #- name: Unit Test
       #  run: |
-      #    npm run test --if-present
+      #    yarn run test --if-present
