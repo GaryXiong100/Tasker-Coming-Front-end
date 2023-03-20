@@ -40,4 +40,4 @@ jobs:
       #run unit test              
       - name: Unit Test
         run: |
-          yarn test --if-presen
+          yarn test
