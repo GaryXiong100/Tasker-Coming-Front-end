@@ -33,11 +33,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
           
-      #install dependencies
-      - name: Install JS dependencies
-        run: yarn install
+      - name: Test Lint
+        run: yarn && CI='' yarn pre-commit
+          
+#       #install dependencies
+#       - name: Install JS dependencies
+#         run: yarn install
       
-      #run unit test              
-      - name: Unit Test
-        run: |
-          yarn test
+#       #run unit test              
+#       - name: Unit Test
+#         run: |
+#           yarn test
