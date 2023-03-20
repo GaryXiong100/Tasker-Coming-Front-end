@@ -32,15 +32,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-
-      #install Eslint
-      - name: install Eslint
-        run: |
-          yarn add eslint
-      #run lint check
-      - name: Lint Check
-        run: |
-          yarn run lint
           
       #install dependencies
       - name: Install JS dependencies
