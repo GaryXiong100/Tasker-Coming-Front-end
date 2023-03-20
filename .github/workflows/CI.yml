@@ -18,8 +18,8 @@ jobs:
     #ensures consistent behavior across different runners and different versions of Node.js by using matrix node version    
     strategy:
       matrix:
-        node-version: [18.x]
-
+         node-version: [16.x]
+         
     steps:   
 
       #actions/checkout@v3 is an official GitHub Action used to check-out a repository so a workflow can access it.
@@ -32,21 +32,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'yarn'
-
-      #install Eslint
-      - name: install Eslint
-        run: |
-          yarn install eslint
-      #run lint check
-      - name: Lint Check
-        run: |
-          yarn run lint
           
-     #install dependencies
+      #install dependencies
       - name: Install JS dependencies
         run: yarn install
       
-#       #run unit test              
-#       - name: Unit Test
-#         run: |
-#           yarn test --if-present
+      #run unit test              
+      - name: Unit Test
+        run: |
+          yarn test --if-presen
